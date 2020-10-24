@@ -1,3 +1,4 @@
+import component
 class Gameobject:
     gameobject_list = []
     def __init__(self, name):

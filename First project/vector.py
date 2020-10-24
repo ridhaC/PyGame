@@ -12,12 +12,18 @@ class Vector2:
     def magnitude(self):
         return math.sqrt(self.x ** 2 + self.y ** 2)
 
+    def array(self):
+        return [x, y]
+
+    def tuple(self):
+        return tuple(self.array())
+
     def __eq__(self, other):
         return  self.x == other.x and  self.y == other.y
 
-    up = Vector2(0, 1)
-    down = Vector2(0, -1)
-    left = Vector2(-1, 0)
-    right = Vector2(1, 0)
-    zero = Vector2(0, 0)
-    one = Vector2(1, 1)
+up = Vector2(0, 1)
+down = Vector2(0, -1)
+left = Vector2(-1, 0)
+right = Vector2(1, 0)
+zero = Vector2(0, 0)
+one = Vector2(1, 1)

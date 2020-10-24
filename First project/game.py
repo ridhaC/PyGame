@@ -1,14 +1,19 @@
 import pygame
 from pygame.locals import *
 import gameobject
+import component
 
 # initilize window
 pygame.init()
 width, height = 640, 480
 screen = pygame.display.set_mode((width, height))
+component.SpriteRenderer.screen = screen
 
 #loading assets
 petr = pygame.image.load("First project/Assets/Sprites/Petr/PetrBase.png")
+obj = gameobject.Gameobject("Petr")
+obj.add_componenet(component.SpriteRenderer(petr))
+petr_position = (100, 100)
 
 #game loop
 while True:
@@ -16,7 +21,7 @@ while True:
     screen.fill(0)
 
     #render petr
-    screen.blit(petr, tuple(petrPosition))
+    component.SpriteRenderer.render_all()
 
     #show render
     pygame.display.flip()
@@ -28,8 +33,5 @@ while True:
             exit(0)
 
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_a:
-                
-            if event.key == pygame.K_d:
-                
+            pass    
 
